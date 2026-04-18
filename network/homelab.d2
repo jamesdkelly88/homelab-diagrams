@@ -1,0 +1,13 @@
+# import hosts
+dt02: @hosts/dt02
+dt05: @hosts/dt05
+dt06: @hosts/dt06
+i: @hosts/internet
+rt03: @hosts/rt03
+sw04: @hosts/sw04
+
+# connect network
+i -- rt03 -- sw04
+sw04 -- dt02
+sw04 -- dt05
+sw04 -- dt06

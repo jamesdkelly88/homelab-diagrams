@@ -1,0 +1,17 @@
+version: '3'
+
+env:
+  D2_NO_BROWSER: 1
+
+tasks:
+  list:
+    desc: List all tasks
+    cmds:
+    - task --list
+    silent: true
+
+  render:
+    desc: Render the diagrams
+    cmds:
+    - d2 --theme 101 network/homelab.d2 homelab.svg
+    silent: true
