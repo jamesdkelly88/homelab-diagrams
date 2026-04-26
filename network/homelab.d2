@@ -1,13 +1,56 @@
 # import hosts
 dt02: @hosts/dt02
+dt03: @hosts/dt03
+dt04: @hosts/dt04
 dt05: @hosts/dt05
 dt06: @hosts/dt06
-i: @hosts/internet
+dt07: @hosts/dt07
+dt08: @hosts/dt08
+dt09: @hosts/dt09
+md03: @hosts/md03
+ns01: @hosts/ns01
+ns02: @hosts/ns02
+rp04: @hosts/rp04
 rt03: @hosts/rt03
 sw04: @hosts/sw04
 
 # connect network
-i -- rt03 -- sw04
+rt03 -- dt07
+rt03 -- rp04
+rt03 -- sw04
 sw04 -- dt02
+sw04 -- dt03
+sw04 -- dt04
 sw04 -- dt05
 sw04 -- dt06
+sw04 -- dt08
+sw04 -- dt09
+sw04 -- md03
+sw04 -- ns01
+sw04 -- ns02
+
+# connect services
+dt06.k8s.jellyfin -- ns01.nas
+
+# saas
+saas: @hosts/saas
+saas.ado -- dt06.k8s.keda {
+    style: {
+        stroke-dash: 3
+  }
+}
+saas.akeyless -- dt06.k8s.extsec {
+    style: {
+        stroke-dash: 3
+  }
+}
+saas.github -- dt05.docker.doco-cd {
+    style: {
+        stroke-dash: 3
+  }
+}
+saas.neon -- dt06.k8s.netbox {
+    style: {
+        stroke-dash: 3
+  }
+}
