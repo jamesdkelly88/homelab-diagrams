@@ -30,16 +30,21 @@ sw04 -- ns01
 sw04 -- ns02
 
 # connect services
-dt06.k8s.jellyfin -- ns01.nas
+dt06.k8s.apps.jellyfin -- ns01.nas
 
 # saas
 saas: @hosts/saas
-saas.ado -- dt06.k8s.keda {
+saas.ado -- dt06.k8s.apps.keda {
     style: {
         stroke-dash: 3
   }
 }
-saas.akeyless -- dt06.k8s.extsec {
+saas.akeyless -- dt06.k8s.cluster.extsec {
+    style: {
+        stroke-dash: 3
+  }
+}
+saas.bitwarden -- dt09.k8s.cluster.extsec {
     style: {
         stroke-dash: 3
   }
@@ -49,7 +54,7 @@ saas.github -- dt05.docker.doco-cd {
         stroke-dash: 3
   }
 }
-saas.neon -- dt06.k8s.netbox {
+saas.neon -- dt06.k8s.apps.netbox {
     style: {
         stroke-dash: 3
   }

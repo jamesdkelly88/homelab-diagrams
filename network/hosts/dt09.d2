@@ -4,6 +4,26 @@ shape: rectangle
 k8s: {
     label: Kubernetes
     label.near: top-center
+    cluster: {
+        label: Cluster Services
+        label.near: top-center
+        extsec: {
+            label: External Secrets
+            label.near: outside-bottom-center
+            shape: image
+            icon: https://external-secrets.io/latest/pictures/eso-round-logo.svg
+        }
+        flux: {
+            label: FluxCD
+            label.near: outside-bottom-center
+            shape: image
+            icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/flux-cd.svg
+        }
+    }
+    apps: {
+        label: Apps
+        label.near: top-center
+    }
 }
 
 
