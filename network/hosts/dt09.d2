@@ -7,6 +7,13 @@ k8s: {
     cluster: {
         label: Cluster Services
         label.near: top-center
+        grid-columns: 3
+        certmanager: {
+            label: Cert-Manager
+            label.near: outside-bottom-center
+            shape: image
+            icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/cert-manager.svg
+        }
         extsec: {
             label: External Secrets
             label.near: outside-bottom-center
@@ -19,10 +26,28 @@ k8s: {
             shape: image
             icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/flux-cd.svg
         }
+        metallb: {
+            label: MetalLB
+            label.near: outside-bottom-center
+            shape: image
+            icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/metallb.svg
+        }
+        ngf: {
+            label: NGINX Gateway Fabric
+            label.near: outside-bottom-center
+            shape: image
+            icon: https://docs.nginx.com/images/icons/NGINX-Gateway-Fabric-product-icon.svg
+        }
     }
     apps: {
         label: Apps
         label.near: top-center
+        headlamp: {
+            label: Headlamp
+            label.near: outside-bottom-center
+            shape: image
+            icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/headlamp.svg
+        }
     }
 }
 
